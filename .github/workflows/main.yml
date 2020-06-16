@@ -22,6 +22,8 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    - name: environment variables
+      run: export
     # Runs a single command using the runners shell
     - name: prepare workspace 
       run: |
@@ -35,3 +37,7 @@ jobs:
         ./autogen.sh
         ./configure --prefix=/usr
         make -j4
+        
+    - name: check files
+      run: echo " " && ls ./va
+      
