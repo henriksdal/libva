@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: environment variables
-      run: echo ${{ env }}
+      run: printenv
     # Runs a single command using the runners shell
     - name: prepare workspace 
       run: |
@@ -38,8 +38,4 @@ jobs:
         ./configure --prefix=/usr
         make -j4
         sudo make install
-        make check
-        
-    - name: check files
-      run: echo " " && ls .
-      
+        make check 
